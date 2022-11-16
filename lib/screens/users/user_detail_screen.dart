@@ -38,8 +38,6 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
                   .deleteUser(int.parse(widget.id))
                   .then((value) {
                     Navigator.pop(context);
-
-                    inspect('something error');
                   }),
                 icon: const Icon(Icons.delete),
               )

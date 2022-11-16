@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_graphql/providers/user_provider.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:provider/provider.dart';
 
 class CreateUserScreen extends StatefulWidget {
@@ -67,8 +64,8 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
                 const SizedBox(height: 15),
                 Consumer<UserProvider>(
                   builder: (context, value, child) {
-                    return ElevatedButton(onPressed: () {
-                      value.createUser(
+                    return ElevatedButton(onPressed: () async {
+                      await value.createUser(
                         nameController.text,
                         emailController.text,
                         passwordController.text,

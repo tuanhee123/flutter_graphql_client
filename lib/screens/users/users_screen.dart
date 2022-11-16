@@ -157,6 +157,13 @@ class _UsersScreenState extends State<UsersScreen> {
           },
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Provider.of<UserProvider>(context, listen: false)
+            .getUsers();
+        },
+        child: const Icon(Icons.refresh)
+      ),
     );
   }
 }

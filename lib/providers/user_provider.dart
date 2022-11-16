@@ -64,6 +64,7 @@ class UserProvider with ChangeNotifier {
               name
               email
               created_at
+              updated_at
             }
           }
           """),
@@ -76,7 +77,7 @@ class UserProvider with ChangeNotifier {
       ).then((result) async {
         inspect(result.data);
 
-        if (result.data!['users'] != null) {
+        if (result.data!['createUser'] != null) {
           users.add(User.fromJson(result.data!['createUser']));
         }
       });
@@ -151,7 +152,6 @@ class UserProvider with ChangeNotifier {
           }
         )
       ).then((result) async {
-        inspect(result.data);
 
         if (result.data != null) {
           getUsers();
